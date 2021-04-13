@@ -17,36 +17,30 @@
     <body>
 
         <div class="form-floating mb-3">
-            <input type="input" class="form-control" id="input" onkeypress="myFunction()">
-            <label for="floatingInput">factorial</label>
+            <input class="form-control" id="input" />
+            <label for="input">factorial</label>
           </div>
 
           <button type="button" class="btn btn-primary" id="calculate">calculate</button>
 
           <p id="output"></p>
-
+        </div>
 
 <script>
-    window.addEventListener("load", (event) => {
+    document.getElementById("calculate").addEventListener("click", (event) => {
 
-        let factorial = 0;
-
-        function myFunction() {
-    document.getElementById("input").value = factorial;
-}
-
+  let factorial = document.getElementById("input").value;
   let Multiplier = 1;
   let total = 1;
   let output = document.getElementById("output");
 
-  document.getElementById("calculate").addEventListener("click", (event) => {
     do {
     total = total * Multiplier;
   } while (Multiplier++ != factorial);
 
     output.innerHTML = `<div> factorial ${factorial} = ${total} </div>`;
   });
-});
 
 </script>
-  </div>
+</body>
+</html>
